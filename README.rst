@@ -1,8 +1,9 @@
 Introduction
 ============
-oftrace is an OpenFlow network tracing tool like traceroute(8) implemented as
-`Ryu <http://osrg.github.io/ryu/>`_ application.  It enables you to investigate
-forwarding route based on each flow entries on OpenFlow Switches.
+oftrace is an OpenFlow network tracing tool like traceroute(8) but works on
+Layer-2, implemented as `Ryu <http://osrg.github.io/ryu/>`_ application.
+It enables you to dynamically investigate forwarding route without changing
+any your production flow entries.
 
 Currently oftrace provides three commands below:
 
