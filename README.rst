@@ -1,11 +1,11 @@
 Introduction
 ============
-oftrace is an OpenFlow network tracing tool like traceroute(8) but works on
+oftroute is an OpenFlow network tracing tool like traceroute(8) but works on
 Layer-2, implemented as `Ryu <http://osrg.github.io/ryu/>`_ application.
 It enables you to dynamically investigate forwarding route without changing
 any your production flow entries.
 
-Currently oftrace provides three commands below:
+Currently oftroute provides three commands below:
 
 - oft-controller
 - oft-ofctl
@@ -27,7 +27,7 @@ oft-controller, receives results, and displays them.
 
 How it works
 ============
-oftrace reserves just one value of an OXM field for traceroute.  It is used to
+oftroute reserves just one value of an OXM field for traceroute.  It is used to
 pick out the probe frame.  If OXM field is IEEE 802.1Q PCP and its value is 7,
 oft-controller will install a flow entry for traceroute into OpenFlow Switches,
 e.g.::
@@ -66,7 +66,7 @@ not.  But of course they are configurable.  If you want to use PCP=3 and
 tunnel_id instead of metadata, you can configure as below::
 
   $ cat ryu.cfg
-  [oftrace]
+  [oftroute]
   metafield = tunnel_id
   ruleclass = RuleVlanPcp3
 
@@ -76,8 +76,8 @@ Full configurable items are:
 
 - cookie
 
-  - cookie is used to distinguish whether the PACKET_IN was occurred by oftrace
-    or not.  It is useful when oftrace runs with other Ryu applications that
+  - cookie is used to distinguish whether the PACKET_IN was occurred by oftroute
+    or not.  It is useful when oftroute runs with other Ryu applications that
     let OpenFlow Switches send PACKET_IN.  Default: 0xfffffffffffffffe
 
 - metafield
@@ -183,4 +183,4 @@ History
 
 License
 =======
-oftrace is available under the Apache License Version 2.0.
+oftroute is available under the Apache License Version 2.0.

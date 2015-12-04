@@ -6,9 +6,9 @@ import ryu.cmd.manager
 
 
 def main():
-    sys.argv.append('oftrace.config')
-    sys.argv.append('oftrace.flow')
-    sys.argv.append('oftrace.trace')
+    sys.argv.append('oftroute.config')
+    sys.argv.append('oftroute.flow')
+    sys.argv.append('oftroute.trace')
     ryu.cmd.manager.main()
 
 

@@ -14,20 +14,20 @@ ryu.cfg.CONF.register_opts(
         ryu.cfg.StrOpt('ruleclass', default='RuleVlanPcp7',
                        help='rule class to handle probe frame'),
     ],
-    'oftrace')
+    'oftroute')
 
 
 def cookie():
-    return ryu.cfg.CONF.oftrace.cookie
+    return ryu.cfg.CONF.oftroute.cookie
 
 
 def metafield():
-    return ryu.cfg.CONF.oftrace.metafield
+    return ryu.cfg.CONF.oftroute.metafield
 
 
 def metavalue():
-    return ryu.cfg.CONF.oftrace.metavalue
+    return ryu.cfg.CONF.oftroute.metavalue
 
 
 def ruleclass():
-    return ryu.cfg.CONF.oftrace.ruleclass
+    return ryu.cfg.CONF.oftroute.ruleclass

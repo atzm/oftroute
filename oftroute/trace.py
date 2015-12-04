@@ -164,14 +164,14 @@ class TracerouteApp(event.ExceptionHandlerMixIn, ryu.base.app_manager.RyuApp):
 
         for listener, pid in get_listener(None) + get_listener(pid):
             try:
-                getattr(listener.get_proxy(prefix='oftrace.'), name)(msg)
+                getattr(listener.get_proxy(prefix='oftroute.'), name)(msg)
             except:
                 _logger.exception(str(listener))
                 self.unregister_listener(listener, pid)
 
 
 class TracerouteController(ryu.app.wsgi.ControllerBase):
-    PATH_BASE = '/oftrace'
+    PATH_BASE = '/oftroute'
     PATH_SNOOP = '/'.join([PATH_BASE, 'snoop'])
     PATH_SNOOP_PID = '/'.join([PATH_SNOOP, '{pid}'])
     PATH_PROBE = '/'.join([PATH_BASE, 'probes'])
