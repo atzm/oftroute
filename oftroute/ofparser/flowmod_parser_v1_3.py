@@ -65,7 +65,7 @@ def flowfilter(entry, rules={}):
 
 
 def str2mod(dp, line, cmd):
-    buf = ofp4.str2mod(line, cmd=cmd)
+    buf = ofp4.str2mod(line, cmd)
     (version, msg_type, msg_len, xid) = ofproto_parser_common.header(buf)
     return OFPFlowMod.parser(dp, version, msg_type, msg_len, None, buf)
 
