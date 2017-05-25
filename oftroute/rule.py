@@ -51,6 +51,7 @@ class RuleVlan(RuleBase):
                                                ethertype=eth.ethertype)
                 eth.ethertype = ryu.lib.packet.ether_types.ETH_TYPE_8021Q
 
+            eth._MIN_PAYLOAD_LEN = 0  # hack to ignore padding
             yield eth
             yield vlh
 

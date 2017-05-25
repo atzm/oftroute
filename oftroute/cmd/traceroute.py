@@ -298,6 +298,7 @@ class Traceroute(util.ControlCommand):
         ethertype = ryu.lib.packet.ether_types.ETH_TYPE_ARP
         handler = ArgumentHandler(args=self.args)
         eth = handler.create_header('eth', ethertype=ethertype)
+        eth._MIN_PAYLOAD_LEN = 0  # hack to ignore padding
         arp = handler.create_header('arp')
         header = eth / arp
         header.serialize()
